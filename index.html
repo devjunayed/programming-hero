@@ -9,41 +9,44 @@
         margin: 0;
         padding: 0;
       }
+      body{
+        font-size: 62.5%;
+      }
       header {
         text-align: center;
-        margin: 20px 0px;
+        margin: 2rem 0rem;
       }
       header > h1 > a {
         background-color: gray;
         opacity: 0.5;
-        padding: 10px;
-        border-radius: 20px;
-        font-size: 30px;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        font-size: 1.5rem;
       }
       header > h1 > a:hover {
         background-color: blue;
         color: white;
       }
       nav> ul> li> a {
-        padding: 1vh 30vw;
-        border-radius: 40px;
+        padding: 1rem 10rem;
+        border-radius: 4rem;
         background-color: blue;
-        font-size: 40px;
+        font-size: 2rem;
         text-decoration: none;
         color: white;
         position: relative;
       }
       li {
-        margin: 5px 0px;
+        margin: 0.5rem 0rem;
         list-style: none;
         transition: 0.2s ease;
         
       }
      
       main {
-        line-height: 60px;
+        line-height: 6rem;
         text-align: center;
-        padding: 80px;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
         background-color: blueviolet;
@@ -55,6 +58,7 @@
         color: black;
       }
       .milestone{
+        font-size: 1rem;
         color: chartreuse;
       }
       summary> h1{
@@ -65,8 +69,8 @@
       }
       summary> span{
         color: white;
-        font-size: 25px;
-        margin-left: 20px;
+        font-size: 1.5rem;
+        margin-left: 1rem;
       }
       .total-day{
         color: white;
@@ -74,10 +78,104 @@
         font-family: 'Courier New', Courier, monospace;
       }
       .conceptual-mark{
-        font-size: 30px;
+        font-size: 3rem;
         position: absolute;
         left: 20px;
       }
+      @media screen and (max-width: 1000px) {
+        body {
+          font-size: 50%;
+        }
+        h1{
+          font-size: 1.5rem;
+        }
+        header > h1 > a{
+          font-size: 1.2rem;
+        }
+        nav > ul> li >a{
+          padding: 0.8rem 8rem;
+          font-size: 1.2rem;
+        }
+        .conceptual-mark{
+          font-size: 2.5rem;
+        }
+}
+      @media screen and (max-width: 700px) {
+        body {
+          font-size: 30%;
+        }
+        h1{
+          font-size: 1.2rem;
+        }
+        header> h1> a{ 
+          width: 20%;
+          display: block;
+          padding: 0.6rem 2rem;
+          font-size: 0.8rem;
+          margin: 1rem auto;
+        }
+        nav > ul> li >a{
+          font-size: 1rem;
+        }
+        .conceptual-mark{
+          font-size: 2rem;
+        }
+}
+      @media screen and (max-width: 580px) {
+        body {
+          font-size: 20%;
+        }
+        h1{
+          font-size: 0.8rem;
+        }
+        header > h1> a{
+          padding: 0.4rem 2rem;
+          font-size: 0.6rem;
+        }
+        nav > ul> li >a{
+          font-size: 0.6rem;
+        }
+        .conceptual-mark{
+          font-size: 1.5rem;
+        }
+}
+      @media screen and (max-width: 450px) {
+        body {
+          font-size: 10%;
+        }
+        h1{
+          font-size: 0.8rem;
+        }
+        header > h1> a{
+          padding: 0.4rem 2rem;
+          font-size: 0.6rem;
+        }
+        nav > ul> li >a{
+          font-size: 0.5rem;
+        }
+        .conceptual-mark{
+          font-size: 1rem;
+        }
+}
+      @media screen and (max-width: 400px) {
+        body {
+          font-size: 8%;
+        }
+        h1{
+          font-size: 0.6rem;
+        }
+        header > h1> a{
+          padding: 1rem 1rem;
+          font-size: 0.6rem;
+        }
+        nav > ul> li >a{
+          padding: 0.1rem 5rem;
+          font-size: 0.7rem;
+        }
+        .conceptual-mark{
+          font-size: 0.5rem;
+        }
+}
     </style>
   </head>
   <body>
