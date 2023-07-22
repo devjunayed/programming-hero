@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
     <style>
-        .container{
-            color: white;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            grid-template-rows: repeat(3, 200px) 50px 50px;
-        }
-        .box{
-            border-radius: 10px;
-            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: larger;
-            background-color: gray;
-        }
-        #box-1{
-            background-color: green;
-            grid-row: span 5;
-        }
-        #box-11, #box-12{
-            grid-column: span 3;
-            background-color: red;
-        }
+      .container {
+        display: grid;
+        /* grid-template-columns: 200px 200px 200px 200px 200px; */
+        /* grid-template-columns: repeat(2, 100px) 200px 150px; */
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 100px);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 20px;
+      }
+
+      .item {
+        border: 1px solid aqua;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <h2>Explore Grid Layout: 2D layout</h2>
     <div class="container">
-        <div class="box" id="box-1">Box - 1</div>
-        <div class="box" id="box-2">Box - 2</div>
-        <div class="box" id="box-3">Box - 3</div>
-        <div class="box" id="box-4">Box - 4</div>
-        <div class="box" id="box-5">Box - 5</div>
-        <div class="box" id="box-6">Box - 6</div>
-        <div class="box" id="box-7">Box - 7</div>
-        <div class="box" id="box-8">Box - 8</div>
-        <div class="box" id="box-9">Box - 9</div>
-        <div class="box" id="box-10">Box - 10</div>
-        <div class="box" id="box-11">Box - 11</div>
-        <div class="box" id="box-12">Box - 12</div>
+      <div class="item">item - 1</div>
+      <div class="item">item - 2</div>
+      <div class="item">item - 3</div>
+      <div class="item">item - 4</div>
+      <div class="item">item - 5</div>
+      <div class="item">item - 6</div>
+      <div class="item">item - 7</div>
+      <div class="item">item - 8</div>
+      <div class="item">item - 9</div>
+      <div class="item">item - 10</div>
+      <div class="item">item - 11</div>
+      <div class="item">item - 12</div>
+      <div class="item">item - 13</div>
+      <div class="item">item - 14</div>
+      <div class="item">item - 15</div>
+      <div class="item">item - 16</div>
+      <div class="item">item - 17</div>
+      <div class="item">item - 18</div>
+      <div class="item">item - 19</div>
+      <div class="item">item - 20</div>
     </div>
-</body>
+  </body>
 </html>
