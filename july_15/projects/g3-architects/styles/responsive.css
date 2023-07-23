@@ -7,8 +7,13 @@
   nav,
   .facts-card-container,
   .sponsors-img-container,
-  .teams-container {
+  .teams-container ,
+  .features{
     flex-direction: column;
+  }
+  .feature-img img{
+    width: 90%;
+    margin-left: 0;
   }
   .teams-img-container {
     grid-template-columns: 1fr;
@@ -25,6 +30,11 @@
   .sponsors p {
     width: 90%;
   }
+  .ten-years-badge{
+    position: static;
+    max-width: 300px;
+  }
+
 }
 
 /* tablet or medium devices */
@@ -33,8 +43,12 @@
     padding: 50px;
   }
   nav,
+  .features,
   .sponsors-img-container,
   .teams-container {
     flex-direction: column;
+  }
+  .feature-img img{
+    margin-left: 0;
   }
 }
