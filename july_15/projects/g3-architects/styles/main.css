@@ -122,3 +122,24 @@ main{
     font-size: 2.8rem;
     color: #424242;
 }
+
+/* sponsors styles */
+.sponsors{
+    margin-top: 40px;
+    text-align: center;
+}
+.sponsors p{
+    margin: 0 auto;
+    width: 30%;
+}
+.sponsors-img-container{
+    gap: 40px;
+    align-items: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sponsors-img-container img{
+    width: 165px;
+}
