@@ -1,0 +1,12 @@
+/* Mobile devices */
+@media screen and (max-width: 576px) {
+    nav{
+        padding: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+    nav ul{
+        text-align: center;
+        justify-content: space-between;
+    }
+}

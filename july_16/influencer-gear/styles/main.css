@@ -1,0 +1,45 @@
+/* fonts linke */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Manrope&family=Poppins:wght@400;600;700&display=swap');
+
+
+/* shared styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #3A3A3A;
+}
+body{
+    font-family: 'Poppins';
+}
+
+
+/* nav styles */
+nav{
+    color: var(--primary-color);
+    padding: 50px 100px;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+nav h1{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+nav ul{
+    display: flex;
+    gap: 30px;
+}
+nav ul li{
+    list-style: none;
+}
+nav a{
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
