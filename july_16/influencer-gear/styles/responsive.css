@@ -21,6 +21,9 @@
     .banner-content p{
         margin: 0 auto;
     }
+    .sponsors{
+        padding: 20px;
+    }
 }
 
 
@@ -37,5 +40,8 @@
     }
     .banner-content p{
         margin: 0 auto;
+    }
+    .sponsors{
+        padding: 50px;
     }
 }

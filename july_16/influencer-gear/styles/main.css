@@ -97,3 +97,13 @@ nav a {
   z-index: 20;
   width: 90%;
 }
+
+/* sponsors */
+.sponsors{
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 100px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
