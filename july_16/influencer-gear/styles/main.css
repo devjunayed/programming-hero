@@ -107,3 +107,72 @@ nav a {
   justify-content: center;
   align-items: center;
 }
+
+/* popular collection */
+.popular-collection{
+  padding: 50px 200px;
+}
+.popular-collection h2{
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.popular-collection .btn-primary{
+  text-align: center;
+  background-color: #FFF;
+  box-shadow: 3px 3px  15px 1px  rgba(0, 0, 0, 0.3);
+  color: var(--btn-color);
+}
+.btn-container{
+  justify-content: end;
+  display: flex;
+}
+.cards{
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+.card{
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  transform:  scale(0.9);
+}
+.card .collection-title{
+  line-height: 2.5rem;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: #18191F;
+}
+.card .price{
+  color: rgba(0, 0, 0, 0.87);
+  font-family: 'Inter';
+  font-size: 1.5rem;
+  font-weight: 400;
+
+}
+.card .rating{
+  margin: 10px 0px;
+}
+.card .desc{
+  margin-top: 10px;
+  color: #787885;
+  font-family: 'Inter';
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.card img{
+  width: 100%;
+}
+.card i{
+  color: #FB8200;
+}

@@ -21,8 +21,12 @@
     .banner-content p{
         margin: 0 auto;
     }
-    .sponsors{
+    .sponsors,
+    .popular-collection{
         padding: 20px;
+    }
+    .popular-collection .cards{
+        grid-template-columns: 1fr;
     }
 }
 
@@ -41,7 +45,11 @@
     .banner-content p{
         margin: 0 auto;
     }
-    .sponsors{
+    .sponsors,
+    .popular-collection{
         padding: 50px;
+    }
+    .popular-collection .cards{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
