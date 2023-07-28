@@ -84,6 +84,20 @@
         position: absolute;
         left: 20px;
       }
+      .all-projects{
+        margin: 0 auto;
+        background-color: greenyellow;
+        padding: 0.2rem;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: black;
+        width: 20%;
+        transition: transform 0.3s ease-in-out;
+      }
+      .all-projects:hover{
+        transform: scale(0.95);
+      }
       @media screen and (max-width: 1000px) {
         body {
           font-size: 50%;
@@ -191,7 +205,9 @@
       </h1>
     </header>
     <main>
-      <h1 class="total-day">Total Day Spend: 14</h1>
+      <a class="all-projects" href="programming-hero/all_projects/view.html">View All Projects 😍😎😁</a>
+      <h1 class="total-day">Total Day Spend: 28</h1>
+      <!-- Milestone 0 -->
       <details>
         <summary class="milestone">
           <h1>Milestone 0: Welcome To Web Course</h1>
@@ -200,12 +216,13 @@
         <nav>
           <ul>
             <li>
-              <a href="/programming-hero/july_01/view.html">July 01 - Welcome</a>
+              <a href="/programming-hero/july_01/view.html">July 01 - Welcome <span>✔</span></a>
             </li>
           </ul>
         </nav>
       </details>
       <hr />
+      <!-- Milestone 1 -->
       <details>
         <summary class="milestone">
           <h1>Milestone 1: HTML, CSS, And Github As A Beginner</h1>
@@ -217,21 +234,21 @@
               <a
                 href="/programming-hero/july_02/view.html"
                 title="Learn and explore HTML"
-                >July 02 - Module 1</a
+                >July 02 - Module 1 <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_03/view.html"
                 title="Learn and Explore CSS"
-                >July 03 - Module 2</a
+                >July 03 - Module 2 <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_04/view.html"
                 title="Git, Source control, GitHub and hosting"
-                >July 04- Module 3</a
+                >July 04- Module 3 <span>✔</span></a
               >
             </li>
             <li>
@@ -240,21 +257,21 @@
                 title="No module - conceptual session"
                 ><span title="Conceptual Session 1" class="conceptual-mark"
                   >&#10070;</span
-                >July 05 - No Module</a
+                >July 05 - No Module <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_06/view.html"
                 title="More about HTML"
-                >July 06 - Module 4</a
+                >July 06 - Module 4 <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_07/view.html"
                 title="Build a beautiful portfolio website"
-                >July 07 - Module 5</a
+                >July 07 - Module 5 <span>✔</span></a
               >
             </li>
             <li>
@@ -263,7 +280,7 @@
                 title="No Module - Conceptual Session"
                 ><span title="Conceptual Session 2" class="conceptual-mark"
                   >&#10070;</span
-                >July 08 - No Module</a
+                >July 08 - No Module <span>✔</span></a
               >
             </li>
 
@@ -272,18 +289,25 @@
                 href="/programming-hero/july_09/view.html"
                 class="assignment"
                 title="Assignment 01"
-                >July 09 - Module 6</a
+                >July 09 - Module 6 <span>✔</span></a
               >
             </li>
             <li>
               <a href="/programming-hero/july_10/view.html" title="Bonus Video"
-                >July 10 - Module 6.5</a
+                >July 10 - Module 6.5 <span>✔</span></a
+              >
+            </li>
+        
+            <li>
+              <a href="/programming-hero/july_11/view.html" title="No Module"
+                >July 11 - No Module <span>✔</span></a
               >
             </li>
           </ul>
         </nav>
       </details>
       <hr />
+      <!-- Milestone 2 -->
       <details>
         <summary class="milestone">
           <h1>Milestone 2: Responsive Web Layout</h1>
@@ -295,14 +319,14 @@
               <a
                 href="/programming-hero/july_12/view.html"
                 title="Responsive CSS Layout"
-                >July 12 - Module 7</a
+                >July 12 - Module 7 <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_13/view.html"
                 title="More Responsive layout and Responsive Portfolio"
-                >July 13 - Module 8</a
+                >July 13 - Module 8 <span>✔</span></a
               >
             </li>
             <li>
@@ -320,14 +344,14 @@
               <a
                 href="/programming-hero/july_15/view.html"
                 title="HTML CSS only Landing Page - G3 Architects"
-                >July 15 - Module 09</a
+                >July 15 - Module 09 <span>✔</span></a
               >
             </li>
             <li>
               <a
                 href="/programming-hero/july_16/view.html"
                 title="Optimize images, icon and more CSS"
-                >July 16 - Module 10</a
+                >July 16 - Module 10 <span>✔</span></a
               >
             </li>
             <li>
@@ -346,18 +370,19 @@
                 href="/programming-hero/july_18/view.html"
                 title="Assignment 2"
                 class="assignment"
-                >July 18 - Module 11</a
+                >July 18 - Module 11 <span>✔</span></a
               >
             </li>
             <li>
               <a href="/programming-hero/july_19/view.html" title="Bonus Video"
-                >July 19 - Module 11.5</a
+                >July 19 - Module 11.5 <span>✔</span></a
               >
             </li>
           </ul>
         </nav>
       </details>
       <hr />
+      <!-- Milestone 3 -->
       <details>
         <summary class="milestone">
           <h1>Milestone 3: CSS Frameworks</h1>
@@ -367,16 +392,18 @@
           <ul>
             <li>
               <a href="/programming-hero/july_20/view.html" title="Introduction to Tailwind"
-                >July 20 - Module 12</a
+                >July 20 - Module 12 <span>✔</span></a
               >
             </li>
              <li>
               <a href="/programming-hero/july_21/view.html" title="Biker Zone With Daisy UI"
-                >July 21 - Module 13</a
+                >July 21 - Module 13 <span>✔</span></a
               >
             </li>
              <li>
               <a href="/programming-hero/july_22/view.html" title="No Module - conceptual session"
+                > <span title="Conceptual Session 2" class="conceptual-mark"
+                  >&#10070;</span
                 >July 22 - No Module</a
               >
             </li>
@@ -392,19 +419,53 @@
             </li>
              <li>
               <a href="/programming-hero/july_25/view.html" title="assignment 03" class="assignment"
-                >July 25 - Module 15</a
+                >July 25 - Module 15 <span>✔</span></a
               >
             </li>
              <li>
               <a href="/programming-hero/july_26/view.html" title="HTML, CSS framework Bonus" 
-                >July 26 - Module 15.5</a
+                >July 26 - Module 15.5 <span>✔</span></a
               >
             </li>
              <li>
               <a href="/programming-hero/july_27/view.html" title="No Module "
-                >July 27 - No Module</a
+                >July 27 - No Module <span>✔</span></a
               >
             </li>
+          </ul>
+        </nav>
+      </details>
+      <hr />
+      <!-- Milestone 4 -->
+      <details>
+        <summary class="milestone">
+          <h1>Milestone 4: Hello JavaScript</h1>
+          <!-- <span title="Completed">&#x272A;</span> -->
+        </summary>
+        <nav>
+          <ul>
+            <li>
+              <a href="/programming-hero/july_28/view.html" title="Introduction to JavaScript"
+                >July 28- Module 16</a
+              >
+            </li>
+             <li>
+              <a href="/programming-hero/july_29/view.html" title="Fundamental Concepts Array and Conditionals"
+                >July 29 - Module 17</a
+              >
+            </li>
+             <li>
+              <a href="/programming-hero/july_30/view.html" title="Loop And Practice Problems"
+                >July 30 - Module 18</a
+              >
+            </li>
+          
+             <li>
+              <a href="/programming-hero/july_31/view.html" title="No Module - conceptual session"
+                >July 31 - No Module</a
+              > 
+            </li>
+            
           </ul>
         </nav>
       </details>
