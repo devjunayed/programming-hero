@@ -13,3 +13,23 @@
  * 
  * Write a program to find your and your friend's grades usign if-else.
  */
+
+var myGrade = 85;
+var tomGrade = 66;
+var janeGrade = 95;
+var peterGrade = 56;
+var johnGrade = 40;
+
+var grade = tomGrade;
+
+if(grade >= 80){
+    console.log('A');
+}else if(grade >= 60 && grade <= 79){
+    console.log('B');
+}else if(grade >= 50 && grade <= 59){
+    console.log('C');
+}else if(grade >= 40 && grade <= 49){
+    console.log('D');
+}else{
+    console.log('F');
+}

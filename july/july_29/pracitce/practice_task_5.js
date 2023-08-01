@@ -5,3 +5,13 @@
  * একটা ভেরিয়েবল থাকবে। সেটার মান green, yellow বা red হতে পারে। সেই অনুসারে ডিফারেন্ট  * ডিফারেন্ট কাজ হবে। তো, সেই কোড ফটাফট লিখে ফেলো।
  * 
  */
+
+ var signal = 'green';
+
+ if(signal == 'red'){
+    console.log('Danger');
+ }else if(signal == 'yellow'){
+    console.log('Stop');
+ }else{
+    console.log('Walk');
+ }

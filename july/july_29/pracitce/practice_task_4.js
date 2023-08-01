@@ -15,3 +15,27 @@
  * 
  * ৬) যারা ৯০ বা তার উপরে পেয়েছে, তাদের grade A+.
  */
+
+
+var alia = 95;
+var dalia = 66;
+var salia = 80;
+var malia = 59;
+var lilia = 47;
+var jalaia = 77;
+
+var grade = lilia;
+
+if(grade >= 90){
+    console.log('A+');
+}else if(grade >= 80 && grade < 90){
+    console.log('A');
+}else if(grade >= 70 && grade < 80){
+    console.log('B');
+}else if(grade >= 60 && grade < 70){
+    console.log('C');
+}else if(grade >= 50 && grade < 60){
+    console.log('D');
+}else {
+    console.log('F');
+}
