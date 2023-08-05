@@ -17,7 +17,7 @@ function getSumOfAnArray(numbers){
 }
 
 // sum of odd in an array
-function getOddNumbersOfAnArray(numbers){
+/* function getOddNumbersSumOfAnArray(numbers){
     let sumOfOdd = 0;
     for(let i = 0; i < numbers.length; i++){
         if(numbers[i] % 2 !== 0){
@@ -26,12 +26,33 @@ function getOddNumbersOfAnArray(numbers){
     }
     return sumOfOdd;
 }
+*/
 
+// const myNumbers = [5, 7, 8, 10, 45, 30];
+// const sumOfArray = getSumOfAnArray(myNumbers);
+// const oddSumOfArray = getOddNumbersSumOfAnArray(myNumbers);
+
+
+// console.log(sumOfArray);
+// console.log(oddSumOfArray); 
+
+
+
+// getting all odd numbers from an array
+function getOddNumbersOfAnArray(numbers){
+    const oddNumbers = [];
+    for(let i = 0; i < numbers.length; i++){
+        const index = i;
+        const element = numbers[index];
+        if(element % 2 !== 0){
+            oddNumbers.push(element);
+        }
+    }
+    return oddNumbers;
+}
 
 const myNumbers = [5, 7, 8, 10, 45, 30];
-const sumOfArray = getSumOfAnArray(myNumbers);
-const oddSumOfArray = getOddNumbersOfAnArray(myNumbers);
-
-
-console.log(sumOfArray);
-console.log(oddSumOfArray);
+// const arrayOfNumbers = [12, 65, 45, 78, 32, 45, 91];
+const allOddNumbers = getOddNumbersOfAnArray(myNumbers);
+const sumOfOddNumbers = getSumOfAnArray(allOddNumbers);
+console.log(sumOfOddNumbers);
