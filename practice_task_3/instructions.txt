@@ -1,9 +1,0 @@
-Practice Task 3
-===============
-
-Selectors Challenges:
---------------------
-
-=> Create an HTML docuemnt with various elements, including headings, paragraphs, and divs.
-
-=> Use different CSS selectors (id, class, universal, tag) to apply unique styles to specific elements.

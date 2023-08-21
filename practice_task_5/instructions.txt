@@ -1,9 +1,0 @@
-Practice Task 5
-===============
-
-Borders Challenge:
-------------------
-
-=> Create a webpage with various elements, such as divs, paragraphs, and images
-
-=> Apply CSS styles to add borders with different widths, colors, border-radius, and box-shadow effects to the elements.
