@@ -1,16 +1,30 @@
-// vary + able = variable
+// number type variable
+var sunglassPrice = 120;
 
-// numerice
-var price = 11; 
-var age = 17;
-var temperature = 38;
+// string type variable
+var specialOne = "Ariana Grande" ;
 
-// string
-var person = "sodor uddin";
-var location = "andork kill bandorban";
-var special = "ali bhat";
+// boolean type variable
+var isSingle = true;
 
-// Boolean
-var serious = true;
-var isFullMarks = true;
-var isSingle = false;
+// two types of number Integer :120,
+// float, decimal: 3.65,
+
+// variable naming convention: rules, best practices
+
+/**
+ * 1. Single word
+ * 2. no gap or space
+ * 3. no qoutation
+ * 4. no keyword
+ * 5. can not start with a number
+ * 6. can not contain dash
+ * 7. should use camelCase
+ */
+
+// Math Operations: +, -, *, /
+// shorthand: +=, -=, ++, --
+// convert: parseInt, parseFloat
+// toFixed()
+// Remainder: vagsesh: %
+
