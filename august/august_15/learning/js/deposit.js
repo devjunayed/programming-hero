@@ -1,30 +1,27 @@
-/* 
-1. add event listener to the deposit buttion
-2. get deposit amount from the deposit input field
-2.5. Convert string deposit amount to a number type
-3. clear the deposit input field after getting the value
-4. get the previous deposit total
-5. calculate new deposit total and set the value to the deposit total
-*/
-
-// step-1:
 document.getElementById('btn-deposit').addEventListener('click', function(){
-    // step-2:
-    const depositField = document.getElementById('deposit-field');
-    const newDepositAmountString = depositField.value;
-    const newDepositAmount = parseFloat(newDepositAmountString);
+    /* 
+    1. get the element by id
+    2. get the vlaue from the element
+    3. convert string value to a number
+    */
+   const newDepositAmount = getInputValueById('deposit-field');
 
+    /* 
+    1. get previous deposit total by id
+    */
 
-    // step-3:
-    depositField.value = "";
+    const previousDepositTotal = getElementValueById('deposit-total');
 
-    // Step-4:
-    const depositTotalElement = document.getElementById('deposit-total');
-    const previousDepositTotalString = depositTotalElement.innerText;
-    const previousDepositTotal = parseFloat(previousDepositTotalString);
-
-    // step-5:
+    /* 
+        calculate new deposti total
+     */
     const newDepositTotal = previousDepositTotal + newDepositAmount;
-    depositTotalElement.innerText = newDepositTotal;
 
-})
+    // set deposit toal
+    setTextElementValueById('deposit-total', newDepositTotal);
+
+    // get previoust balance by using the function
+    const previousBalanceTotal = getElementValueById('balance-total');
+    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+    setTextElementValueById('balance-total', newBalanceTotal);
+});
