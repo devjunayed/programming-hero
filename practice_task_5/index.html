@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Design Responsive layout - 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 50%;
+        }
+        .blog-container{
+            padding: 100px;
+
+        }
+        .blog-content{
+            margin: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .blog{
+
+            align-items: center;
+            display: flex;
+        }
+        .reverse{
+            flex-direction: row-reverse;
+        }
+        @media screen and (max-width: 576px) {
+            .blog-container{
+                width: 100%;
+                padding: 20px;
+            }
+            .blog img{
+                width: 80%;
+            }
+            .blog-content{
+                width: 80%;
+            }
+            .blog{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog">
+            <img src="../practice_task_4/food_1.jpeg" alt="">
+            <div class="blog-content">
+                <h1>Why do we use it?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum quasi beatae placeat officia fugiat ad laboriosam a deleniti doloremque? Quas, pariatur hic odit expedita vero natus tenetur velit provident nisi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, possimus explicabo eum, reiciendis temporibus culpa sit dolor, corrupti accusantium excepturi ad quia eveniet cupiditate ipsa fugit. Doloribus illo dolorum error!</p>
+            </div>
+        </div>
+        <div class="blog reverse">
+            <img src="../practice_task_4/food_2.jpg" alt="">
+            <div class="blog-content">
+                <h1>Why do we use it?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum quasi beatae placeat officia fugiat ad laboriosam a deleniti doloremque? Quas, pariatur hic odit expedita vero natus tenetur velit provident nisi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, possimus explicabo eum, reiciendis temporibus culpa sit dolor, corrupti accusantium excepturi ad quia eveniet cupiditate ipsa fugit. Doloribus illo dolorum error!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
