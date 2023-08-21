@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>summary</title>
-</head>
-<body>
-    <main id="main-container">
-        <section>
-            <h1 class="section-title">Section title-1</h1>
-            <ul>
-                <li>list item-1</li>
-                <li>list item-2</li>
-                <li>list item-3</li>
-                <li>list item-4</li>
-            </ul>
-        </section>
-        <section id="second-section">
-            <h1 class="section-title">Section title-2</h1>
-            <ul id="second-list">
-                <li>list item-1</li>
-                <li>list item-2</li>
-                <li>list item-3</li>
-                <li>list item-4</li>
-            </ul>
-        </section>
-        <section>
-            <h1 class="section-title">Section title-3</h1>
-            <ul>
-                <li>list item-1</li>
-                <li>list item-2</li>
-                <li>list item-3</li>
-                <li>list item-4</li>
-            </ul>
-        </section>
-    </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary: Event handlers</title>
+  </head>
+  <body>
+    <h1>Explore DOM Events</h1>
+    <button onclick="makeGreen()">Make Green</button>
+    <button id="make-yellow">Make Yellow</button>
+    <br />
+
+    <input type="email" id="user-email" />
+
     <script>
-        console.log('embeded inside HTML file');
+      // option: 1
+      function makeGreen() {
+        document.body.style.backgroundColor = "green";
+      }
+
+      // option: 2
+      document
+        .getElementById("make-yellow")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "yellow";
+        });
+
+      document
+        .getElementById("user-email")
+        .addEventListener("keyup", function (event) {
+            console.log(event.target.value);
+        });
     </script>
-    <script src="js/first.js"></script>
-    <script src="js/second.js"></script>
-    <script src="js/third.js"></script>
-</body>
+  </body>
 </html>

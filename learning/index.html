@@ -3,92 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour of DOM</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <style>
-      li {
-        color: tomato;
-      }
-      #fruits-title {
-        color: black;
-      }
-      .important-places {
-        color: blueviolet;
-      }
-    </style>
+    <title>JS DOM Events</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to my DOM</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam voluptas
-        nihil iure quas blanditiis repellendus doloremque enim quaerat incidunt
-        magnam sint, provident ut maiores cumque officia distinctio velit,
-        molestias nostrum.
-      </p>
-    </header>
-    <main id="main-container">
-      <section>
-        <h1>My Awesome DOM de baba</h1>
-        <ul>
-          <li>Jalali Set</li>
-          <li>Shafayet</li>
-          <li>bonobash</li>
-        </ul>
-      </section>
+    <h1 onclick="console.log('I am clicked')">DOM er ajke special events</h1>
+    <button onclick="console.log(Math.random()*10)">Click Me</button>
+    <button onclick="console.log(56)">Another button</button>
+    <br />
+    <button onclick="document.body.style.backgroundColor = 'yellow';">
+      Make yellow
+    </button>
+    <!-- option 2 -->
+    <button onclick="makeRed()">Make Red</button>
+    <!-- option 3 -->
+    <button id="make-blue">Make Blue</button>
+    <button id="make-purple">Make purple</button>
+    <!-- option 4 -->
+    <button id="make-pink">Make pink</button>
+    <!-- option 4: another3 -->
+    <button id="make-green">Make green</button>
+    <!-- option 4: final -->
+    <button id="make-goldenrod">Make goldenRod</button>
 
-      <section class="fruits-container">
-        <h1 id="fruits-title">Fruits I like</h1>
-        <ul>
-          <li>Apple</li>
-          <li>Banana</li>
-          <li>Carrot</li>
-        </ul>
-      </section>
-      <section id="places-container" class="large-text">
-        <h1 id="places-title">Places I like to visit</h1>
-        <ul id="places-list">
-          <li class="important-places">Soondarban</li>
-          <li class="important-places">bandorban</li>
-          <li class="important-places">Kataban</li>
-          <li class="important-places">shalbon</li>
-        </ul>
-      </section>
-    </main>
-
-    <!-- <script src="js/dom.js"></script> -->
+    <script src="js/event.js"></script>
     <script>
-      const liCollection = document.getElementsByTagName("li");
-      //   console.log(liCollection);
-      for (const li of liCollection) {
-        // console.log(li);
-      }
-
-      //   option-1: getElementsByTagName
-      const allHeadings = document.getElementsByTagName("h1");
-      for (h1 of allHeadings) {
-        //   console.log(h1.innerText);
-      }
-
-      //   option-2: getElementById
-      const fruitsTtile = document.getElementById("fruits-title");
-      fruitsTtile.innerText = "Fruits chnaged by JS";
-
-      //   option-3: getElementsByClassName
-      const places = document.getElementsByClassName("important-places");
-
-      for (place of places) {
-        // console.log(place.innerText);
-      }
-
-      //   option-4:querySelector
-    //   option-5: querySelectorAll
-    const someLi = document.querySelectorAll('.fruits-container li');
-    for(const li of someLi){
-        // console.log(li.innerText);
-    } 
+      document
+        .getElementById("make-goldenrod")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "goldenrod";
+        });
     </script>
-    <script src="js/append.js"></script>
-    <script src="js/styleJs.js"></script>
   </body>
 </html>
