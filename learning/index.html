@@ -1,85 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baap Er bank</title>
-    <!-- tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Baap Er Bank</title>
+      <!-- tailwind -->
+      <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Daisy ui -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
+      <!-- Daisy ui -->
+      <link
+        href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-4xl text-center mt-4">Functional <span class="text-red-500 font-bold">Baap-Er-Bank</span>!!!</h1>
+    </header>
+    <main>
+        <!-- balance and transaction summary -->
+        <section class="mt-8">
+            <div class="grid grid-cols-3 gap-4 w-3/4 mx-auto text-white">
+                <div class="bg-yellow-400 p-8 rounded-lg">
+                    <h4 class="text-2xl">Deposit</h4>
+                    <h4 class="text-4xl font-medium">$<span id="deposit-total">00</span></h4>
+                </div>
+                <div class="bg-red-400 p-8 rounded-lg">
+                    <h4 class="text-2xl">Withdraw</h4>
+                    <h4 class="text-4xl font-medium">$<span id="withdraw-total">00</span></h4>
+                </div>
+                <div class="bg-blue-400 p-8 rounded-lg">
+                    <h4 class="text-2xl">Balance</h4>
+                    <h4 class="text-4xl font-medium">$<span id="balance-total">1240</span></h4>
+                </div>
+              
+            </div>
+        </section>
 
-    <div class="flex w-full justify-center items-center h-[100vh] flex-col">
-        <header>
-            <h1 class="text-5xl text-center mt-8">
-              Welcome to your
-              <span class="text-violet-600 font-semibold"> Baap Er Bank</span>!!!
-            </h1>
-          </header>
-          <main class="w-6/12">
-            <section class="bg-blue-100 rounded-lg w-full mx-auto mt-12 p-10 shadow-lg">
-              <h3 class="text-3xl">Please Login</h3>
-              <form class="flex flex-col mt-5 gap-4">
-                <!-- email -->
-                <input
-                  id="email-input"
-                  class="w-9/12 p-2"
-                  type="email"
-                  placeholder="Enter your email"
-                />
-                <span
-                  id="email-validate-txt"
-                  class="-mt-3 ml-[5px] text-sm text-red-600"
-                ></span>
-      
-                <!-- password -->
-                <input
-                  id="password-input"
-                  class="w-9/12 p-2"
-                  type="password"
-                  placeholder="Enter your password"
-                />
-                <span
-                  id="password-validate-txt"
-                  class="-mt-3 ml-[5px] text-sm text-red-600"
-                ></span>
-      
-                <!-- submit -->
-                <button
-                  id="btn-submit"
-                  class="btn-sign-in btn btn-go-rogue text-white bg-red-400 hover:bg-green-500 w-2/12 p-2 rounded-md"
-                >
-                  Submit
-                </button>
-              </form>
-            </section>
-      
-            <!-- invalid user -->
-            <dialog id="my_modal" class="modal">
-              <form method="dialog" class="modal-box">
-                <button
-                  class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-                >
-                  ✕
-                </button>
-                <h3 class="font-bold text-lg">Invalid User!</h3>
-                <p class="py-4">User not found</p>
-              </form>
-            </dialog>
-
-           
-        
-          </main>
-    </div>
-
-    <script src="js/login.js"></script>
-  </body>
+        <!-- deposit and withdraw section-->
+        <section class="mt-8 w-3/4 mx-auto">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-violet-400 p-8 rounded-lg">
+                    <h3 class="text-4xl text-white mb-4">Your Deposit</h3>
+                    <input id="deposit-field" class="w-3/4 px-4 py-3 rounded block" type="text" placeholder="$ Amount you want to deposit">
+                    <button id="btn-deposit" class="bg-blue-800 px-6 py-2 text-white font-medium hover:bg-blue-400 rounded-lg mt-4">Deposit</button>
+                </div>
+                <div class="bg-amber-400 rounded-lg p-8">
+                    <h3 class="text-4xl text-white mb-4">Your Withdraw</h3>
+                    <input id="withdraw-field" class="w-3/4 px-4 py-3 rounded block" type="text" placeholder="$ Amount you want to withdraw">
+                    <button id="btn-withdraw" class="bg-blue-800 px-6 py-2 text-white font-medium hover:bg-blue-400 rounded-lg mt-4">Withdraw</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/utilites.js"></script> 
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
 </html>
