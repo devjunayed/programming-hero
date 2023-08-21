@@ -1,27 +1,15 @@
-/** practice task 01
- * 
- * Write a function called foo() which prints "foo" and a function called bar() which
- * prints "bar". Call function bar() in the foo()  function after printing. What will 
- * be the output? Now call the foo() to see the output
- * 
+/* Practice task 01
+
+Problem:
+=======
+Write a function that will take hour as the input parameter and
+will convert it into minutes and will return the result in minutes.
+
  */
 
-function foo(){
-    console.log("foo");
-    bar();
+function hourToMinutes(hour){
+    return hour*60;
 }
 
-function bar(){
-    console.log("bar");
-}
-
-foo();
-
-/* 
-Output:
-foo
-bar
- */
-
-
-
+const minutes = hourToMinutes(5);
+console.log(minutes);
