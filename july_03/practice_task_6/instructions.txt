@@ -1,0 +1,9 @@
+Practice Task 6
+===============
+
+Display Challenge:
+------------------
+
+=> Build a webpage with different elements(e.g, images, headings, paragraph, buttons).
+
+=> Apply CSS styles to set the display property to none, hidden, inline, block and inline-block for specific elements.

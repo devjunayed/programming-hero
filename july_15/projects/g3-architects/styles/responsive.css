@@ -1,0 +1,54 @@
+/* mobile devcies */
+
+@media screen and (max-width: 576px) {
+  header {
+    padding: 20px;
+  }
+  nav,
+  .facts-card-container,
+  .sponsors-img-container,
+  .teams-container ,
+  .features{
+    flex-direction: column;
+  }
+  .feature-img img{
+    width: 90%;
+    margin-left: 0;
+  }
+  .teams-img-container {
+    grid-template-columns: 1fr;
+  }
+  .teams-content,
+  .facts-card-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .facts-card-container {
+    gap: 20px;
+  }
+
+  .sponsors p {
+    width: 90%;
+  }
+  .ten-years-badge{
+    position: static;
+    max-width: 300px;
+  }
+
+}
+
+/* tablet or medium devices */
+@media screen and (min-width: 576px) and (max-width: 960px) {
+  header {
+    padding: 50px;
+  }
+  nav,
+  .features,
+  .sponsors-img-container,
+  .teams-container {
+    flex-direction: column;
+  }
+  .feature-img img{
+    margin-left: 0;
+  }
+}
