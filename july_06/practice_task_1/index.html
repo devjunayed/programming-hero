@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Task 1</title>
+    <style>
+        .search-section{
+            display: flex;
+            flex-direction: column;
+        }
+        .search-bar{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+        input, textarea{
+            width: 300px;
+            height: 30px;
+        }
+        input[type="submit"]{
+            height: 30px;
+            width: 90px;
+        }
+        .feedback{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        textarea{
+            height: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <section class="search-section">
+      <div class="search-bar">
+        <p>Search your Image here:</p>
+        <input type="search" />
+        <input type="submit" value="Search" />
+      </div>
+      <img
+        src="https://c8.alamy.com/comp/PM3DEE/kung-fu-panda-po-2008-dream-works-PM3DEE.jpg"
+        width="200px"
+        alt=""
+      />
+      <a href="">Fore more click here</a>
+    </section>
+    <hr>
+    <section class="feedback">
+        <p>Feedback Form:</p>
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+        <label for="comment">Comment:</label>
+        <textarea name="" id="comment" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit">
+
+    </section>
+  </body>
+</html>

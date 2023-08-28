@@ -1,0 +1,224 @@
+/* fonts linke */
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Manrope&family=Poppins:wght@400;600;700&display=swap");
+
+/* shared styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #3a3a3a;
+  --btn-color: #E02C6D;
+}
+body {
+  font-family: "Poppins";
+}
+.btn-primary{
+    padding: 10px 20px ;
+    border: none;
+    background-color: var(--btn-color);
+    cursor: pointer;
+    color: #FFF;
+    font-size: 1rem;
+    margin-top: 20px;
+font-weight: 700;
+line-height: normal;
+}
+
+/* nav styles */
+nav {
+  color: var(--primary-color);
+  padding: 50px 100px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+}
+nav h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+nav ul {
+  display: flex;
+  gap: 30px;
+}
+nav ul li {
+  list-style: none;
+}
+nav a {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* banner section */
+.banner-container {
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px;
+  display: flex;
+}
+.banner-content h2 {
+  color: var(--primary-color);
+  font-size: 3.25rem;
+  font-weight: 700;
+}
+.banner-content p {
+  width: 70%;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.banner-content .btn-primary{
+    border-radius: 20px;
+}
+.banner-img{
+  position: relative;
+  width: 400px;
+  height: 350px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+.banner-img-inner{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-15%, -15%);
+    background-color: lightgray;
+    width: 250px; 
+    height: 250px;
+    z-index: -10;
+    border-radius: 50%; 
+}
+.banner-container .banner-img img {
+  margin: 20px;
+  z-index: 20;
+  width: 90%;
+}
+
+/* sponsors */
+.sponsors{
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 100px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* popular collection */
+.popular-collection{
+  padding: 50px 200px;
+}
+.popular-collection h2{
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.popular-collection .btn-primary{
+  text-align: center;
+  background-color: #FFF;
+  box-shadow: 3px 3px  15px 1px  rgba(0, 0, 0, 0.3);
+  color: var(--btn-color);
+}
+.btn-container{
+  justify-content: end;
+  display: flex;
+}
+.cards{
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+.card{
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  transform:  scale(0.9);
+}
+.card .collection-title{
+  line-height: 2.5rem;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: #18191F;
+}
+.card .price{
+  color: rgba(0, 0, 0, 0.87);
+  font-family: 'Inter';
+  font-size: 1.5rem;
+  font-weight: 400;
+
+}
+.card .rating{
+  margin: 10px 0px;
+}
+.card .desc{
+  margin-top: 10px;
+  color: #787885;
+  font-family: 'Inter';
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.card img{
+  width: 100%;
+}
+.card i{
+  color: #FB8200;
+}
+
+/* featured products */
+.featured-products{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 50px 150px;
+}
+.featured-products h3{
+  margin-bottom: 20px;
+  color: #0A0826;
+font-size: 2.375rem;
+font-style: normal;
+font-weight: 700;
+}
+.featured-products-content p{
+  color: #6C6C6C;
+font-size: 1rem;
+font-weight: 700;
+}
+
+/* footer */
+footer{
+  padding: 50px;
+  background: #0A0826;
+  color: #FFF;
+  text-align: center;
+  line-height: 30px;
+}
+footer h3{
+font-size: 1.5rem;
+font-weight: 700;
+}
+footer p{
+  color:  #D9DBE1;
+font-family: Manrope;
+font-size: 0.8rem;
+font-weight: 700;
+}
+footer i{
+  border-radius: 50%;
+  padding: 10px;
+  margin: 20px 10px;
+  background-color:#3a3a3a;
+  font-size: 2rem;
+}
