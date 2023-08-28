@@ -8,3 +8,12 @@
 
     Your task is to display the instructor names that has the position senior using filter
 */
+
+const instructor = [
+    {name: 'Nodi', age: 28, position: 'Senior'},
+    {name: 'Akil', age: 26, position: 'Junior'},
+    {name: 'Shobuj', age: 30, position: 'Senior'}
+];
+
+const senior = instructor.filter(instruc => instruc.position === 'Senior');
+console.log(senior);
