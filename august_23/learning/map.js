@@ -23,4 +23,4 @@ console.log(output2);
 //     const double = num *2;
 //     doubled.push(double);
 // }
-
+// console.log(doubled);
