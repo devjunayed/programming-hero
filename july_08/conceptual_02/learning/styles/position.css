@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.banner-container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    border: 5px solid red;
+    padding: 20px;
+    flex-direction: row-reverse;
+    gap: 50px;
+}

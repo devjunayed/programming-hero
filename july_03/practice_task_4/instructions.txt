@@ -1,0 +1,10 @@
+Practic Task 4
+==============
+
+Background Styling Challenge:
+-----------------------------
+
+=> Design a webpage with multiple sections/divs.
+
+=> Apply CSS styles to set different background colors, images, repeats, positions, and sizes for each section.
+
