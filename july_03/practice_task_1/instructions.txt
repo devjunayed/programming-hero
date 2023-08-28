@@ -1,9 +1,0 @@
-Practice Task 1
-===============
-
-CSS Types Challenge:
---------------------
-
-=> Create an HTML document with three paragraphs.
-
-=> Apply CSS STyles to each parapgraph
