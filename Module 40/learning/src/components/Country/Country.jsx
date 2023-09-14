@@ -11,7 +11,7 @@ const Country = ({ country }) => {
     }
     return (
         <div className='country'>
-            <h3>Name: {name.common}</h3>
+            <h3>Name: {name["common"]}</h3>
             <img src={flags.png} alt="" height="150px" />
             <p>Population: {population}</p>
             <p>Area: {area}</p>
