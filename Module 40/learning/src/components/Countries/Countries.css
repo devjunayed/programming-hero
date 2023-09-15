@@ -3,3 +3,27 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
+
+button{
+    padding: 10px 20px;
+    background-color: brown;
+    border-radius: 10px;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
+}
+
+.visited{
+    background-color: blueviolet;
+}
+
+.flag-container{
+    display: flex;
+    gap: 10px;
+}
+.flag-container img{
+    height: 150px;
+}
