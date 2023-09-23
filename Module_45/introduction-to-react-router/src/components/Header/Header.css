@@ -1,0 +1,7 @@
+nav a {
+    margin-left: 20px;
+}
+
+a.active{
+    color: red;
+}
