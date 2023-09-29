@@ -1,0 +1,32 @@
+.header-wrapper{
+    padding: 30px;
+    background: #000;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.button-wrapper div, .button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 20px;
+}
+
+.button-wrapper div button, .button-wrapper button {
+
+    background-color: red;
+    border: none;
+    padding: 15px 40px;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
