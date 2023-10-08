@@ -1,5 +1,6 @@
-import { Root } from "postcss";
 import { createBrowserRouter } from "react-router-dom";
+import Home from "../pages/Home/Home";
+import Root from "../layouts/Root";
 
 const routes = createBrowserRouter([
     {
@@ -8,8 +9,10 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: 
+                element: <Home></Home>
             }
         ]
     }
 ]);
+
+export default routes;
