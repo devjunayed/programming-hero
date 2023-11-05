@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                 <h2 className="card-title ">{title}</h2>
                 <div className="flex text-red-700 font-bold">
                     <p className=''>Price: ${price}</p>
-                    <Link to={`/checkout/${_id}`}>
+                    <Link to={`/book/${_id}`}>
                         <button className=""><BsArrowRight /></button>
                     </Link>
                 </div>

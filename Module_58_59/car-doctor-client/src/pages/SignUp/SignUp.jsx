@@ -1,11 +1,11 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 const SignUp = () => {
-    const navigate = useNavigate();
-    
-    const {createUser} = useContext(AuthContext);
+
+    const { createUser, setUser, user, auth } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -15,13 +15,20 @@ const SignUp = () => {
         const password = form.password.value;
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            navigate("/login");
-            console.log(user);
-        })
-        .catch(err => console.log(err));
-
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+            })
+            .catch(err => console.log(err));
+        if(user){
+            updateProfile(auth.currentUser, {
+                displayName: name
+            })
+            .then(()=>{
+                console.log('name update');
+                console.log(user);
+            })
+        }
         console.log(name, email, password);
     }
     return (
