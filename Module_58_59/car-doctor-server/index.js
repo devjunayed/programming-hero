@@ -1,11 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173'],
+  credentials: true
+}));
 app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.5qon2py.mongodb.net/?retryWrites=true&w=majority`;
@@ -28,6 +33,21 @@ async function run() {
     const servicesCollection = client.db("carDoctor").collection("services");
     const bookingCollection = client.db("carDoctor").collection("bookings");
 
+    // auth related ai
+    app.post('/jwt', async(req, res)=>{
+      const user = req.body;
+      console.log(user);
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1h'});
+      res
+      .cookie('token', token, {
+        httpOnly: true,
+        secure: false,
+        sameSite: 'none'
+      })
+      .send({success: true});
+    });
+
+    // services related api
     app.get('/services', async(req, res)=>{
       const cursor = servicesCollection.find();
       const result = await cursor.toArray();
