@@ -5,7 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 const SignUp = () => {
 
-    const { createUser, setUser, user, auth } = useContext(AuthContext);
+    const { createUser, auth } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -17,19 +17,14 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                setUser(user);
-            })
-            .catch(err => console.log(err));
-        if(user){
-            updateProfile(auth.currentUser, {
-                displayName: name
-            })
-            .then(()=>{
-                console.log('name update');
+                // setUser(user)
+                
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
                 console.log(user);
             })
-        }
-        console.log(name, email, password);
+            .catch(err => console.log(err));
     }
     return (
         <div className="hero my-10">

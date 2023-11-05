@@ -26,11 +26,19 @@ const BookService = () => {
             img: img
         }
         console.log(order);
+
+        fetch('http://localhost:3000/bookings',{
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data));
     }
 
-    fetch()
-    .then()
-    .catch()
+  
 
     return (
         <div>
@@ -54,7 +62,7 @@ const BookService = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                        <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
