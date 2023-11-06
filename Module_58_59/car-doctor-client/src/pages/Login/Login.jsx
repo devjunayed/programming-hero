@@ -7,7 +7,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 
 const Login = () => {
-    const {signIn, setUser} = useContext(AuthContext);
+    const {signIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     console.log(location);
@@ -21,19 +21,15 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             const loggedInUser = result.user;
-            setUser(loggedInUser);
             console.log(loggedInUser);
             const user = {email};
             // get access token
-            axios.post('http://localhost:3000/jwt', user)
+            axios.post('http://localhost:3000/jwt', user, {withCredentials: true})
             .then(res => {
                 console.log(res.data);
                 navigate(location?.state ? location?.state : "/");
             })
             .catch(err => console.log(err))
-
-
-           
         })
         .catch(err => console.log(err));
 
