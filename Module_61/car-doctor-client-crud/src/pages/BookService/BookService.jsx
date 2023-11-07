@@ -5,9 +5,9 @@ import { AuthContext } from '../../providers/AuthProvider';
 const BookService = () => {
     const service = useLoaderData();
     const { title, _id, price, img } = service;
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
-    const handleBookService = event =>{
+    const handleBookService = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -15,31 +15,31 @@ const BookService = () => {
         const date = form.date.value;
         const email = user?.email;
         const booking = {
-            customerName: name, 
-            email, 
+            customerName: name,
+            email,
             img,
-            date, 
+            date,
             service: title,
-            service_id: _id, 
+            service_id: _id,
             price: price
         }
 
         console.log(booking);
 
-        fetch('http://localhost:5000/bookings', {
-            method: 'POST', 
+        fetch('https://car-doctor-server-rouge-ten.vercel.app/bookings', {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(booking)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('service book successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('service book successfully')
+                }
+            })
 
     }
 
@@ -70,7 +70,7 @@ const BookService = () => {
                         <label className="label">
                             <span className="label-text">Due amount</span>
                         </label>
-                        <input type="text" defaultValue={'$'+ price} className="input input-bordered" />
+                        <input type="text" defaultValue={'$' + price} className="input input-bordered" />
                     </div>
                 </div>
                 <div className="form-control mt-6">
