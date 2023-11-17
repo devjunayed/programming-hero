@@ -1,0 +1,12 @@
+.swiper-slide{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-wrapper{
+    padding-bottom: 50px !important;
+}
+.swiper-pagination{
+    bottom: 0px !important;
+}
