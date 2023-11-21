@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BottomBorderButton from "../../../components/BottomBorderButton/BottomBorderButton";
 import Cover from "../../Shared/Cover/Cover";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
@@ -27,9 +28,11 @@ const MenuCategory = ({ items, title, description, bgImg }) => {
                 }
             </div>
             <div className="text-center">
-                <BottomBorderButton
-                    title="Order your favourite food"
-                />
+                <Link to={title && `/order/${title}`}>
+                    <BottomBorderButton
+                        title="Order your favourite food"
+                    />
+                </Link>
             </div>
         </div>
     );

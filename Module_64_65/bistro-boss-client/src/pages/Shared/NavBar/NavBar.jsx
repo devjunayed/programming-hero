@@ -6,6 +6,7 @@ const NavBar = () => {
     const navOptions = <>
         <li className="uppercase font-bold"><NavLink to="/">Home</NavLink></li>
         <li className="uppercase font-bold"><NavLink to="/menu">Menu</NavLink></li>
+        <li className="uppercase font-bold"><NavLink to="/order/salads">Order Food</NavLink></li>
     </>
     return (
         <>
