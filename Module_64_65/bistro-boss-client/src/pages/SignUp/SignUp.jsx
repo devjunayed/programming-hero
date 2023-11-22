@@ -1,7 +1,7 @@
 import LoginCoverImg from '../../assets/others/authentication2.png';
 import LoginBgImg from '../../assets/others/authentication.png';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -9,42 +9,30 @@ import { useContext } from 'react';
 import { useForm } from "react-hook-form"
 import { updateProfile } from 'firebase/auth';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 
 
 
 const SignUp = () => {
     const { createUser, auth } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-
-    //     createUser(email, password)
-    //         .then(res => {
-    //             if (user) {
-    //                 updateProfile(auth.currentUser, { displayName: name })
-    //                     .then(() => {
-    //                         console.log("user name updated");
-    //                     })
-    //             }
-    //             console.log(res.user);
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-
-
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, reset, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
         createUser(data.email, data.password)
         .then(res => {
             if(res.user){
-                updateProfile(auth.currentUser, {displayName: data.name})
-                .then(()=> console.log('name updated'))
+                updateProfile(auth.currentUser, {displayName: data.name, photoURL: data.photoUrl})
+                .then(()=> {
+                    navigate("/");
+                    console.log('name updated');
+                    reset();
+                    Swal.fire({
+                        title: "Account Created Successfully!",
+                        icon: "success"
+                      });
+                })
             }
         })
     }
@@ -67,6 +55,15 @@ const SignUp = () => {
                             </label>
                             <input {...register("name", { required: true })} name="name" type="text" placeholder="name" className="input input-bordered" />
                             {errors.name?.type === "required" && (
+                                <p className='text-red-600'>name is required</p>
+                            )}
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo Url</span>
+                            </label>
+                            <input {...register("photoUrl", { required: true })} name="photoUrl" type="text" placeholder="photo url" className="input input-bordered" />
+                            {errors.photoUrl?.type === "required" && (
                                 <p className='text-red-600'>name is required</p>
                             )}
                         </div>

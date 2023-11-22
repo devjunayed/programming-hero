@@ -3,17 +3,23 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import LoginCoverImg from '../../assets/others/authentication2.png';
 import LoginBgImg from '../../assets/others/authentication.png';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
     const captchaRef = useRef();
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    const from = location.state?.from?.pathname || "/";
 
 
     const handleSubmit = (e) => {
@@ -25,6 +31,11 @@ const Login = () => {
         signIn(email, password)
             .then(res => {
                 console.log(res);
+                Swal.fire({
+                    title: "Logged In Successfully!",
+                    icon: "success"
+                  });
+                navigate(from, {replace: true});
             })
             .catch(err => console.log(err));
     }

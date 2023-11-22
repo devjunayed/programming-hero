@@ -1,13 +1,35 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(() => {
+
+            })
+    }
+
     const navOptions = <>
         <li className="uppercase font-bold"><NavLink to="/">Home</NavLink></li>
         <li className="uppercase font-bold"><NavLink to="/menu">Menu</NavLink></li>
         <li className="uppercase font-bold"><NavLink to="/order/salads">Order Food</NavLink></li>
-        <li className="uppercase font-bold"><NavLink to="/login">Login</NavLink></li>
+        <li className="uppercase font-bold"><NavLink to="/secret">Secret</NavLink></li>
+
+        {
+            user ? <>
+                <li className="uppercase font-bold"><Link onClick={handleLogout} >Logout</Link></li>
+            </> : <>
+                <li className="uppercase font-bold"><NavLink to="/login">Login</NavLink></li>
+            </>
+        }
     </>
     return (
         <>
@@ -30,7 +52,11 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         {navOptions}
                     </ul>
-                    <a className="btn text-white">Button</a>
+                    <div className="avatar border-4 border-white rounded-full">
+                        <div className="w-12 rounded-full">
+                            <img src={user?.photoURL} alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
