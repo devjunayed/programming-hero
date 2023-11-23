@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form"
 import { updateProfile } from 'firebase/auth';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 
 
@@ -17,24 +18,35 @@ import Swal from 'sweetalert2';
 const SignUp = () => {
     const { createUser, auth } = useContext(AuthContext);
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
         createUser(data.email, data.password)
-        .then(res => {
-            if(res.user){
-                updateProfile(auth.currentUser, {displayName: data.name, photoURL: data.photoUrl})
-                .then(()=> {
-                    navigate("/");
-                    console.log('name updated');
-                    reset();
-                    Swal.fire({
-                        title: "Account Created Successfully!",
-                        icon: "success"
-                      });
-                })
-            }
-        })
+            .then(res => {
+                if (res.user) {
+                    updateProfile(auth.currentUser, { displayName: data.name, photoURL: data.photoUrl })
+                        .then(() => {
+                            // create user entry in the database
+                            const userInfo = {
+                                name: data.name,
+                                email: data.email,
+                            }
+                            axiosPublic.post('/users', userInfo)
+                                .then(res => {
+                                    if (res.data.insertedId) {
+                                        navigate("/");
+                                        console.log('name updated');
+                                        reset();
+                                        Swal.fire({
+                                            title: "Account Created Successfully!",
+                                            icon: "success"
+                                        });
+                                    }
+                                })
+                        })
+                }
+            })
     }
 
 

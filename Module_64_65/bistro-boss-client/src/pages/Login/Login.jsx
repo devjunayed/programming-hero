@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
     const captchaRef = useRef();
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -97,7 +97,7 @@ const Login = () => {
                             <span className='border-2 border-black p-2 rounded-full'>
                                 <FaFacebookF />
                             </span>
-                            <span className='border-2 border-black p-2 rounded-full'>
+                            <span onClick={googleSignIn} className='cursor-pointer border-2 border-black p-2 rounded-full'>
                                 <FaGoogle />
                             </span>
                             <span className='border-2 border-black p-2 rounded-full'>
