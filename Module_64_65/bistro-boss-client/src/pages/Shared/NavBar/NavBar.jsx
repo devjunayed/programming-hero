@@ -25,7 +25,7 @@ const NavBar = () => {
         <li className="uppercase font-bold"><NavLink to="/order/salads">Order Food</NavLink></li>
         <li className="uppercase font-bold"><NavLink to="/secret">Secret</NavLink></li>
         <li className="uppercase font-bold text-white">
-                <Link to="/" className="indicator">
+                <Link to="/dashboard/cart" className="indicator">
                     <span className="indicator-item badge badge-primary">+{cart.length}</span>
                     <div className="grid text-xl place-items-center text-white"> <FaShoppingCart /></div> 
                 </Link>
