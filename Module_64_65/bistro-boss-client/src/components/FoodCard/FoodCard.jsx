@@ -1,9 +1,63 @@
 import PropTypes from 'prop-types';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useCart from '../../hooks/useCart';
+
+const FoodCard = ({ item }) => {
+    const AxiosSecure = useAxiosSecure();
+    const { user } = useAuth();
+    const { name, image, price, recipe, _id } = item;
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [, refetch] = useCart();
 
 
-const FoodCard = ({item}) => {
-  
-    const {name, image, price, recipe} = item;
+
+    const handleAddToCart = () => {
+        if (user && user?.email) {
+            console.log(user.email, item);
+            const cartItem = {
+                menuId: _id,
+                email: user.email,
+                name,
+                image,
+                price,
+                recipe
+            }
+
+            AxiosSecure.post('/carts', cartItem)
+                .then(res => {
+                    console.log('added data')
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title:  `${name} added to cart`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        refetch();
+                    }
+                })
+
+        } else {
+            Swal.fire({
+                title: "You are not logged in!",
+                text: "Please login to add to the cart!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, login!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location }, replace: true })
+                }
+            });
+        }
+    }
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -13,7 +67,7 @@ const FoodCard = ({item}) => {
                 <h2 className="card-title justify-center">{name}</h2>
                 <p>{recipe}</p>
                 <div className="card-actions justify-center">
-                    <button className="btn btn-primary border-0 border-b-2 border-b-[#BB8506] bg-slate-100 text-[#BB8506] hover:bg-black hover:border-b-[#BB8506] hover:text-[#BB8506]  uppercase">Add to cart</button>
+                    <button onClick={handleAddToCart} className="btn btn-primary border-0 border-b-2 border-b-[#BB8506] bg-slate-100 text-[#BB8506] hover:bg-black hover:border-b-[#BB8506] hover:text-[#BB8506]  uppercase">Add to cart</button>
                 </div>
             </div>
         </div>

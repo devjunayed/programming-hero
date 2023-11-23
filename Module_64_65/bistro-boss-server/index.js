@@ -26,6 +26,7 @@ async function run() {
     const database = client.db('bistroDB');
     const menuCollection = database.collection('menu');
     const reviewsCollection = database.collection('reviews');
+    const cartCollection = database.collection('carts');
 
     app.get('/menu', async(req, res) =>{
         const result = await menuCollection.find().toArray();
@@ -35,7 +36,22 @@ async function run() {
     app.get('/reviews', async(req, res) => {
         const result = await reviewsCollection.find().toArray();
         res.send(result);
+    });
+
+    // carts collection
+    app.get('/carts', async(req, res) => {
+      const email = req.query.email;
+      const query = {email: email};
+
+      const result = await cartCollection.find(query).toArray();
+      res.send(result);
     })
+
+    app.post("/carts", async(req, res) => {
+      const cartItem = req.body;
+      const result = await cartCollection.insertOne(cartItem);
+      res.send(result);
+    });
 
     console.log('mongodb connected')
   } finally {
@@ -51,3 +67,16 @@ app.get("/", (req, res) => {
 app.listen(port, (req, res) => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+
+/**
+ * -----------------------------------------------
+ *                NAMING CONVENTION
+ * -----------------------------------------------
+ * app.get('/users')
+ * app.get('/users/:id')
+ * app.post('/users')
+ * app.put('/users/:id')
+ * app.patch('/users/:id')
+ * app.delete('/users/:id')
+*/
