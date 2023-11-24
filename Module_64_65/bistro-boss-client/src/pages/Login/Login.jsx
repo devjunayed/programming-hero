@@ -9,6 +9,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const axiosPublic = useAxiosPublic();
 
 
     const from = location.state?.from?.pathname || "/";
@@ -49,6 +51,20 @@ const Login = () => {
             setDisabled(true);
             loadCaptchaEnginge(6);
         }
+    }
+    const handleGoogleLogin = () => {
+        googleSignIn()
+        .then(res => {
+            const userInfo = {
+                email: res.user?.email,
+                name: res.user?.displayName
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res => {
+                console.log(res.data);
+                navigate(from);
+            })
+        })
     }
 
     useEffect(() => {
@@ -97,7 +113,7 @@ const Login = () => {
                             <span className='border-2 border-black p-2 rounded-full'>
                                 <FaFacebookF />
                             </span>
-                            <span onClick={googleSignIn} className='cursor-pointer border-2 border-black p-2 rounded-full'>
+                            <span onClick={handleGoogleLogin} className='cursor-pointer border-2 border-black p-2 rounded-full'>
                                 <FaGoogle />
                             </span>
                             <span className='border-2 border-black p-2 rounded-full'>
