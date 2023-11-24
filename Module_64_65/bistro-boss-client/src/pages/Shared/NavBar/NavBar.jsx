@@ -3,10 +3,12 @@ import "./NavBar.css";
 import { FaShoppingCart } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
     const [cart] = useCart();
 
     const handleLogout = () => {
@@ -14,8 +16,8 @@ const NavBar = () => {
             .then(() => {
 
             })
-            .catch(() => {
-
+            .catch((err) => {
+                console.log(err);
             })
     }
 
@@ -25,7 +27,7 @@ const NavBar = () => {
         <li className="uppercase font-bold"><NavLink to="/order/salads">Order Food</NavLink></li>
         <li className="uppercase font-bold"><NavLink to="/secret">Secret</NavLink></li>
         <li className="uppercase font-bold text-white">
-                <Link to="/dashboard/cart" className="indicator">
+                <Link to={isAdmin ? "/dashboard/users" :"/dashboard/cart"} className="indicator">
                     <span className="indicator-item badge badge-primary">+{cart.length}</span>
                     <div className="grid text-xl place-items-center text-white"> <FaShoppingCart /></div> 
                 </Link>
